@@ -15,7 +15,7 @@ public class Toy {
 
     @Override
     public String toString() {
-        return String.format("id:%d, Name: %s, Probability: %.2f, Count: %d", this.id, this.name, this.weight, this.numbersToys);
+        return String.format("%d, %s, %.2f, %d", this.id, this.name, this.weight, this.numbersToys);
     }
 
     public int getId() {
