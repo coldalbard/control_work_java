@@ -1,5 +1,7 @@
 package model;
 
+import service.ToyStore;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -11,5 +13,7 @@ public class Test {
         txt.writeFile(toys);
         ArrayList<Toy> arr = txt.readFile();
         System.out.println(arr);
+        ToyStore ts = new ToyStore();
+        ts.lottery();
     }
 }
