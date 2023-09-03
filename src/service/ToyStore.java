@@ -10,18 +10,16 @@ import java.util.ArrayList;
 
 public class ToyStore implements DataService {
     private TxtFormat txtDataBase;
-    private UserToys userToys;
     private ArrayList<Toy> toys;
 
     public ToyStore() {
         this.txtDataBase = new TxtFormat(FileType.TXT);
         this.toys = this.txtDataBase.readFile();
-        this.userToys = new UserToys();
     }
 
     @Override
     public void addToy(Toy toy) {
-        toys.add(toy);
+        this.toys.add(toy);
         this.txtDataBase.writeFile(toys);
     }
 
@@ -37,9 +35,10 @@ public class ToyStore implements DataService {
     }
 
     @Override
-    public void lottery() {
+    public Toy lottery() {
         if (this.toys.isEmpty()) {
-            System.out.println("В магазине закончились игрушки(");
+            System.out.println("The store ran out of toys(");
+            return null;
         } else {
             double sumWeight = 0;
             for (Toy toy : this.toys) {
@@ -61,11 +60,14 @@ public class ToyStore implements DataService {
                 }
             }
             if (userToy != null) {
-                System.out.println("Поздравляем вы выиграли игрушку: " + userToy.getName());
-                this.userToys.addToy(userToy);
-                this.toys.remove(userToy);
+                System.out.println("Congratulations you have won a toy: " + userToy.getName());
+                userToy.setNumbersToys(userToy.getNumbersToys() - 1);
+                if (userToy.getNumbersToys() <= 0) this.toys.remove(userToy);
                 this.txtDataBase.writeFile(this.toys);
-            } else System.out.println("К сожалению вы ничего не выиграли(");
+            } else {
+                System.out.println("Unfortunately you didn't win anything (");
+            }
+            return userToy;
         }
     }
 }

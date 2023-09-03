@@ -5,11 +5,15 @@ import java.util.ArrayList;
 
 public abstract class Format {
     private final FileType formatName;
-    public Format(FileType formatName){
+
+    public Format(FileType formatName) {
         this.formatName = formatName;
     }
+
     public abstract ArrayList<Toy> readFile() throws ParseException;
-    public abstract boolean writeFile(ArrayList<Toy> toys);
+
+    public abstract void writeFile(ArrayList<Toy> toys);
+
     public FileType getFormatName() {
         return formatName;
     }
