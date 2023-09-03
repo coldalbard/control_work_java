@@ -7,5 +7,5 @@ public interface DataService {
 
     void changeToyWeight(int searchId, double weight);
 
-    void lottery();
+    Toy lottery();
 }

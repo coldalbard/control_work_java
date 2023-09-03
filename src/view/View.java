@@ -9,6 +9,7 @@ public class View {
     private static final Scanner sc = new Scanner(System.in);
 
     public static int mainPage() {
+        System.out.println();
         System.out.println("1. Drawing of a toy");
         System.out.println("2. Show my toys");
         System.out.println("3. Add a toy");
@@ -34,7 +35,7 @@ public class View {
         System.out.println("Your toys:\n");
     }
 
-    public static Toy addToy(){
+    public static Toy addToy() {
         System.out.printf("Enter the toy id: ");
         int id = sc.nextInt();
         System.out.printf("Enter the name of the toy: ");
@@ -46,7 +47,7 @@ public class View {
         return new Toy(id, name, numbersToys, weight);
     }
 
-    public static Number[] weightChange(){
+    public static Number[] weightChange() {
         Number[] idAndWeight = new Number[2];
         System.out.printf("Enter the toy id: ");
         int id = sc.nextInt();
