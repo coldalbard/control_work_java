@@ -5,6 +5,9 @@ import model.Toy;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * @apiNote Класс View, класс для вывода меню для взаимодействия с пользователем.
+ */
 public class View {
     private static final Scanner sc = new Scanner(System.in);
 

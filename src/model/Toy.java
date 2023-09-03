@@ -1,5 +1,12 @@
 package model;
 
+/**
+ * @apiNote Класс Toy(Игрушка), нужен для создания экземпляров класса
+ * id - идентификатор игрушки
+ * name - наименование
+ * numberToys - количество
+ * weight - вес
+ */
 public class Toy {
     private int id;
     private String name;

@@ -7,6 +7,12 @@ import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Locale;
 
+/**
+ * @apiNote Класс TxtFormat дочерний класс Format, нужен для записи
+ * в файл в формате txt, и чтения из файла
+ * formatName - формат файла
+ * filePath - путь к файлу
+ */
 public class TxtFormat extends Format {
     private String filePath;
 

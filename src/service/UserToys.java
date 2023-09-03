@@ -6,6 +6,12 @@ import model.TxtFormat;
 
 import java.util.ArrayList;
 
+/**
+ * @apiNote Класс UserToys, для добавления выигрыша пользователя в файл(массив)
+ * или чтения из файла, для формирования массива
+ * txtUserToys - "БД с игрушками" которые пользователь уже ывиграл
+ * userToys - список игрушек из "БД" пользователя
+ */
 public class UserToys {
     private final TxtFormat txtUserToys;
     private final ArrayList<Toy> userToys;

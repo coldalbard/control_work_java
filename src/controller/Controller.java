@@ -5,6 +5,12 @@ import service.ToyStore;
 import service.UserToys;
 import view.View;
 
+/**
+ * @apiNote Класс Controller, предназначен для совмещения реализаций
+ * service и view частей приложения
+ * toyStore - магазин игрушек
+ * userToys - игрушки пользователя
+ */
 public class Controller {
     private final ToyStore toyStore;
     private final UserToys userToys;

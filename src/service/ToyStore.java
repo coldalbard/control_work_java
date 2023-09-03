@@ -8,9 +8,15 @@ import java.text.DecimalFormat;
 import java.util.Random;
 import java.util.ArrayList;
 
+/**
+ * @apiNote Класс ToyStore(Магазин игрушек) имплементирует интерфейс DataService,
+ * предназначен для добавления, изменения веса(частоты выпадения игрушки), для розыгрыша.
+ * txtDataBase - "Наша БД с игрушками"
+ * toys - список игрушек из "БД"
+ */
 public class ToyStore implements DataService {
-    private TxtFormat txtDataBase;
-    private ArrayList<Toy> toys;
+    private final TxtFormat txtDataBase;
+    private final ArrayList<Toy> toys;
 
     public ToyStore() {
         this.txtDataBase = new TxtFormat(FileType.TXT);
