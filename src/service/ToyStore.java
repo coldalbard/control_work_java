@@ -8,21 +8,36 @@ import java.text.DecimalFormat;
 import java.util.Random;
 import java.util.ArrayList;
 
+/**
+ * @apiNote Класс ToyStore(Магазин игрушек) имплементирует интерфейс DataService,
+ * предназначен для добавления, изменения веса(частоты выпадения игрушки), для розыгрыша.
+ * txtDataBase - "Наша БД с игрушками"
+ * toys - список игрушек из "БД"
+ */
 public class ToyStore implements DataService {
-    private TxtFormat txtDataBase;
-    private ArrayList<Toy> toys;
+    private final TxtFormat txtDataBase;
+    private final ArrayList<Toy> toys;
 
     public ToyStore() {
         this.txtDataBase = new TxtFormat(FileType.TXT);
         this.toys = this.txtDataBase.readFile();
     }
 
+    /**
+     * @param toy игрушка
+     * @apiNote Метод для добавления игрушки в магазин
+     */
     @Override
     public void addToy(Toy toy) {
         this.toys.add(toy);
         this.txtDataBase.writeFile(toys);
     }
 
+    /**
+     * @param searchId id игрушки, вес который хотим поменять
+     * @param weight   желаемый вес игрушки
+     * @apiNote Метод для изменения веса игрушки(частоты выпадения игрушки)
+     */
     @Override
     public void changeToyWeight(int searchId, double weight) {
         for (Toy value : this.toys) {
@@ -34,6 +49,9 @@ public class ToyStore implements DataService {
         }
     }
 
+    /**
+     * @apiNote Метод для розыгрыша игрушек
+     */
     @Override
     public Toy lottery() {
         if (this.toys.isEmpty()) {
@@ -44,18 +62,18 @@ public class ToyStore implements DataService {
             for (Toy toy : this.toys) {
                 sumWeight += toy.getWeight();
             }
+
             Random random = new Random();
             Double randomWeight = random.nextDouble() * sumWeight;
             DecimalFormat df = new DecimalFormat("#.##");
             randomWeight = Double.valueOf(df.format(randomWeight).replace(',', '.'));
-            System.out.println(randomWeight);
+
             Toy userToy = null;
             double currentWeight = 0;
             for (Toy toy : this.toys) {
                 currentWeight += toy.getWeight();
                 if (randomWeight <= currentWeight) {
                     userToy = toy;
-                    System.out.println(currentWeight);
                     break;
                 }
             }

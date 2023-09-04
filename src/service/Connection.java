@@ -2,6 +2,10 @@ package service;
 
 import controller.Controller;
 
+/**
+ * @apiNote Класс Connection(Соединение), реализует функционал класса Controller,
+ * Управление всеми методами
+ */
 public class Connection {
     private final Controller controller = new Controller();
 
