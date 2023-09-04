@@ -21,6 +21,10 @@ public class UserToys {
         this.userToys = this.txtUserToys.readFile();
     }
 
+    /**
+     * @param toy сама игрушка
+     * @apiNote Метод для добавления игрушек пользователю
+     */
     public void addToy(Toy toy) {
         boolean flag = false;
         for (Toy value : this.userToys) {
@@ -38,6 +42,9 @@ public class UserToys {
         }
     }
 
+    /**
+     * @apiNote Метод для вывода игрушек на экран пользователя
+     */
     public void showToys() {
         for (Toy toy : this.userToys) {
             System.out.println(toy);

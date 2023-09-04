@@ -26,6 +26,10 @@ public class TxtFormat extends Format {
         this.filePath = "D:\\gb\\control_work_java\\control_wok_java\\src\\dataBase.txt";
     }
 
+    /**
+     * @apiNote Метод для чтения из файла
+     * @return ArrayList<Toy> res Массив из Игрушек
+     */
     @Override
     public ArrayList<Toy> readFile() {
         StringBuilder sb = new StringBuilder();
@@ -52,6 +56,10 @@ public class TxtFormat extends Format {
         return res;
     }
 
+    /**
+     * @apiNote Метод для записи игрушек в файл
+     * @param toys входной массив игрушек для записи
+     */
     @Override
     public void writeFile(ArrayList<Toy> toys) {
         File newFile = new File(this.filePath);

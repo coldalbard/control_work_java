@@ -20,15 +20,25 @@ public class Controller {
         this.toyStore = new ToyStore();
     }
 
+    /**
+     * @apiNote Метод для вывода меню в консоль
+     * @return View.mainPage() выбор пользователя из меню
+     */
     public int mainPage(){
         return View.mainPage();
     }
 
+    /**
+     * @apiNote Метод для добавления игрушку в "БД" и массив магазина
+     */
     public void addToy() {
         this.toyStore.addToy(View.addToy());
         System.out.println("Toy added");
     }
 
+    /**
+     * @apiNote Метод, для изменения веса игрушки
+     */
     public void changeToyWeight() {
         Number[] idWeight = View.weightChange();
         int id = idWeight[0].intValue();
@@ -37,6 +47,9 @@ public class Controller {
         System.out.println("The weight of the toy has been changed");
     }
 
+    /**
+     * @apiNote Метод, для розыгрыша игрушки и вручения ее пользователю
+     */
     public void lottery() {
         View.Drawing();
         Toy toy = this.toyStore.lottery();
@@ -45,6 +58,9 @@ public class Controller {
         }
     }
 
+    /**
+     * @apiNote Метод, для вывода игрушек пользователя в консоль
+     */
     public void showToys() {
         View.showToys();
         this.userToys.showToys();

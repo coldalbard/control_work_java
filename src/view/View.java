@@ -42,10 +42,11 @@ public class View {
         System.out.printf("Enter the toy id: ");
         int id = sc.nextInt();
         System.out.printf("Enter the name of the toy: ");
-        String name = sc.next();
+        sc.nextLine();
+        String name = sc.nextLine();
         System.out.printf("Enter the number of toys: ");
         int numbersToys = sc.nextInt();
-        System.out.printf("Enter the weight of the toy:");
+        System.out.printf("Enter the weight of the toy: ");
         double weight = sc.nextDouble();
         return new Toy(id, name, numbersToys, weight);
     }

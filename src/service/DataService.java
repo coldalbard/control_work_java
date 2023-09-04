@@ -3,8 +3,8 @@ package service;
 import model.Toy;
 
 /**
- * @apiNote Интерфейс DataService, если имплементируем интерфейс,
- * то обязует реализовать методы интерфейса(если класс не абстрактный)
+ * @apiNote Интерфейс DataService, если классы имплементируют интерфейс,
+ * то обязуются реализовать методы интерфейса(если класс не абстрактный)
  */
 public interface DataService {
     void addToy(Toy toy);
